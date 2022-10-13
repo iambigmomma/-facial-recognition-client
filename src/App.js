@@ -92,7 +92,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://whispering-hamlet-25919.herokuapp.com/imageurl', {
+    fetch('https://facial-recognition-server-4g4g9.ondigitalocean.app/imageurl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -102,7 +102,7 @@ class App extends Component {
     .then(response => response.json())
     .then(response => {
       if (response) {
-        fetch('https://whispering-hamlet-25919.herokuapp.com/image', {
+        fetch('https://facial-recognition-server-4g4g9.ondigitalocean.app/image', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
